@@ -46,8 +46,8 @@ from PIL import ImageFont
 import common
 from common import OUTPUT_SHAPE
 
-fonts = ["fonts/Farrington-7B-Qiqi.ttf", "fonts/Arial.ttf", "fonts/times.ttf"]
-# fonts = ["fonts/times.ttf"]
+#fonts = ["fonts/Farrington-7B-Qiqi.ttf", "fonts/Arial.ttf", "fonts/times.ttf"]
+fonts = ["fonts/times.ttf"]
 FONT_HEIGHT = 32  # Pixel size to which the chars are resized
 
 CHARS=common.CHARS[:]
@@ -99,7 +99,7 @@ def euler_to_mat(yaw, pitch, roll):
 def pick_colors():
     first = True
     return random.random(),random.random()
-    while first or plate_color - text_color < 0.3:
+    while first or text_color > 0.5:
         text_color = random.random()
         plate_color = random.random()
         #if text_color > plate_color:
@@ -168,7 +168,7 @@ def generate_code():
     for i in range(length):
         if 0 == i % 4 and append_blank and i > 0:  # do not add blank as the first digit
             f = f + blank
-        f = f + random.choice(common.DIGITS)
+        f = f + random.choice(common.CHARS)
     return f
 
 

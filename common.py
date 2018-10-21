@@ -46,13 +46,13 @@ __all__ = (
 
 
 DIGITS = "0123456789"
-LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+LETTERS = "ABCDEFGHJKLMNPRSTUVWXYZ"
 
 CHARS = list(DIGITS + LETTERS)
 
-LENGTHS = [6, 6]  # the number of digits varies from LENGTHS[0] to LENGTHS[1] in a image
+LENGTHS = [17, 17]  # the number of digits varies from LENGTHS[0] to LENGTHS[1] in a image
 TEST_SIZE = 100
-ADD_BLANK = True  # if add a blank between digits
+ADD_BLANK = False  # if add a blank between digits
 LEARNING_RATE_DECAY_FACTOR = 0.9  # The learning rate decay factor
 INITIAL_LEARNING_RATE = 1e-3
 DECAY_STEPS = 5000
